@@ -59,4 +59,20 @@ class UniversityServiceTest {
         assertDoesNotThrow(() -> service.enrollStudent(student2, course));
         assertEquals(2, repository.findAllEnrollments().size());
     }
+
+    @Test
+    void testGetCoursesForStudent() {
+    Student student = new Student("S1", "Иван Иванов");
+    Course course1 = new Course("C1", "Java Разработка");
+    Course course2 = new Course("C2", "Алгоритмы и структуры данных");
+
+    service.enrollStudent(student, course1);
+    service.enrollStudent(student, course2);
+
+    var studentCourses = service.getCoursesForStudent(student);
+    
+    assertEquals(2, studentCourses.size());
+    assertTrue(studentCourses.contains(course1));
+    assertTrue(studentCourses.contains(course2));
+}
 }

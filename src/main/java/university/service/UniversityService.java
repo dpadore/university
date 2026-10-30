@@ -24,4 +24,11 @@ public class UniversityService {
         repository.saveEnrollment(enrollment);
         return enrollment;
     }
+
+    public java.util.List<Course> getCoursesForStudent(Student student) {
+    return repository.findAllEnrollments().stream()
+            .filter(e -> e.getStudent().getId().equals(student.getId()))
+            .map(Enrollment::getCourse)
+            .toList();
+}
 }
