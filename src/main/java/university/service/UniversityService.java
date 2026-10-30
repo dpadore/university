@@ -16,7 +16,7 @@ public class UniversityService {
     public Enrollment enrollStudent(Student student, Course course) {
         if (repository.existsEnrollment(student, course)) {
             throw new IllegalArgumentException(
-                "Студент " + student.getName() + " уже записан на курс " + course.getTitle()
+                "Предупреждение: Студент " + student.getName() + " уже записан на курс " + course.getTitle()
             );
         }
 
