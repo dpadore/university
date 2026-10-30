@@ -64,7 +64,7 @@ class UniversityServiceTest {
     void testGetCoursesForStudent() {
     Student student = new Student("S1", "Иван Иванов");
     Course course1 = new Course("C1", "Java Разработка");
-    Course course2 = new Course("C1", "Алгоритмы и структуры данных");
+    Course course2 = new Course("C2", "Алгоритмы и структуры данных");
 
     service.enrollStudent(student, course1);
     service.enrollStudent(student, course2);
