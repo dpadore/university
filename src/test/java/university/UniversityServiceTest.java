@@ -74,5 +74,6 @@ class UniversityServiceTest {
     assertEquals(2, studentCourses.size());
     assertTrue(studentCourses.contains(course1));
     assertTrue(studentCourses.contains(course2));
+
 }
 }
