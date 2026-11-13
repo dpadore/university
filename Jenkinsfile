@@ -2,10 +2,24 @@ pipeline {
     agent any
 
     stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        
         stage('Build') {
             steps {
                 dir('D:\\BSTU\\Java\\lab2\\university') {
                     bat 'mvn compile'
+                }
+            }
+        }
+        
+        stage('Static Analysis') {
+            steps {
+                dir('D:\\BSTU\\Java\\lab2\\university') {
+                    bat 'mvn checkstyle:check'
                 }
             }
         }
@@ -32,6 +46,14 @@ pipeline {
                     bat 'mvn package -DskipTests'
                 }
             }
+        }
+    }
+    post {
+        success {
+            echo 'Пайплайн успешно завершен!'
+        }
+        failure {
+            echo 'Пайплайн завершился с ошибкой!'
         }
     }
 }

@@ -16,6 +16,8 @@
         <module name="AvoidStarImport"/>
         <!-- Проверка неиспользуемых импортов -->
         <module name="UnusedImports"/>
+        <!-- Проверка дублирующихся (избыточных) импортов -->
+        <module name="RedundantImport"/>
         <!-- Порядок модификаторов -->
         <module name="ModifierOrder"/>
     </module>
