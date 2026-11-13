@@ -27,9 +27,7 @@ public class UniversityService {
         }
 
         // Требование 4: Предупреждение, если студент уже записан (WARN)
-        if (repository.existsEnrollment(student, course)) {
-            logger.warn("Студент '{}' уже записан на дисциплину '{}'",
-                    student.getName(), course.getTitle());
+        if (repository.existsEnrollment(student, course)) { logger.warn("Студент '{}' уже записан на дисциплину '{}'", student.getName(), course.getTitle());
             throw new IllegalArgumentException(
                     "Студент " + student.getName() + " уже записан на курс " + course.getTitle()
             );
