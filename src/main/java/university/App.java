@@ -31,7 +31,6 @@ public class App {
         Student defaultStudent = new Student("S1", "Иван Иванов");
         Course defaultCourse = new Course("C1", "Java Разработка");
 
-        System.out.println("Запуск системы Университета...");
         service.enrollStudent(defaultStudent, defaultCourse);
         System.out.println("Студент " + defaultStudent.getName()
                 + " успешно записан на курс " + defaultCourse.getTitle() + "!");

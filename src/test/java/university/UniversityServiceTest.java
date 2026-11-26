@@ -89,7 +89,7 @@ class UniversityServiceTest {
         PrometheusMeterRegistry registry = new PrometheusMeterRegistry(PrometheusConfig.DEFAULT);
         UniversityService meteredService = new UniversityService(repository, registry);
 
-        Student student = new Student("S1", "Иван Иванов");
+        Student student = new Student("S7", "Иван Иванов");
         Course course1 = new Course("C1", "Java Разработка");
         Course course2 = new Course("C2", "Математическое программирование");
 
