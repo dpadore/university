@@ -33,7 +33,6 @@ pipeline {
             post {
                 always {
                     dir('D:\\BSTU\\Java\\lab2\\university') {
-                        // публикация JUnit-отчетов
                         junit 'target/surefire-reports/*.xml'
                     }
                 }

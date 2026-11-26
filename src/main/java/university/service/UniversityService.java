@@ -11,7 +11,6 @@ import java.util.List;
 
 public class UniversityService {
 
-    // Требование 2: Создание Logger, связанного с классом UniversityService
     private static final Logger logger = LoggerFactory.getLogger(UniversityService.class);
     private final CourseRepository repository;
 
@@ -20,13 +19,11 @@ public class UniversityService {
     }
 
     public Enrollment enrollStudent(Student student, Course course) {
-        // Требование 5: Проверка критической ошибки (ERROR)
         if (student == null || course == null) {
             logger.error("Ошибка операции записи: передан пустой объект студента или дисциплины");
             throw new IllegalArgumentException("Студент и дисциплина не могут быть null");
         }
 
-        // Требование 4: Предупреждение, если студент уже записан (WARN)
         if (repository.existsEnrollment(student, course)) {
             logger.warn("Студент '{}' уже записан на дисциплину '{}'",
                     student.getName(), course.getTitle());
@@ -35,8 +32,8 @@ public class UniversityService {
             );
         }
 
-        // Требование 3: Штатное успешное выполнение операции (INFO)
         Enrollment enrollment = new Enrollment(student, course);
+        
         repository.saveEnrollment(enrollment);
         logger.info("Студент '{}' успешно записан на дисциплину '{}'",
                 student.getName(), course.getTitle());

@@ -6,19 +6,14 @@
     <property name="charset" value="UTF-8"/>
     <property name="severity" value="error"/>
 
-    <!-- Ограничение длины строки -->
     <module name="LineLength">
         <property name="max" value="130"/>
     </module>
 
     <module name="TreeWalker">
-        <!-- Запрет звездных импортов (import java.util.*;) -->
         <module name="AvoidStarImport"/>
-        <!-- Проверка неиспользуемых импортов -->
         <module name="UnusedImports"/>
-        <!-- Проверка дублирующихся (избыточных) импортов -->
         <module name="RedundantImport"/>
-        <!-- Порядок модификаторов -->
         <module name="ModifierOrder"/>
     </module>
 </module>
