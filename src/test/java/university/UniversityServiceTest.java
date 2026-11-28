@@ -50,6 +50,8 @@ class UniversityServiceTest {
 
         service.enrollStudent(student, course);
 
+
+
         assertThrows(
             IllegalArgumentException.class,
             () -> service.enrollStudent(student, course)
@@ -58,7 +60,7 @@ class UniversityServiceTest {
 
     @Test
     void testMultipleStudentsCanEnrollInSameCourse() {
-        Student student1 = new Student("S1", "Иван Иванов");
+        Student student1 = new Student("S3", "Вася ВАсильев");
         Student student2 = new Student("S2", "Петр Петров");
         Course course = new Course("C1", "Java Разработка");
 
